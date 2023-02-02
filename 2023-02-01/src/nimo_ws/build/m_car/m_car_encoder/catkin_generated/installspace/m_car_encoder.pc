@@ -1,0 +1,8 @@
+prefix=/home/agilex/nimo_ws/install
+
+Name: m_car_encoder
+Description: Description of m_car_encoder
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msg geometry_msgs tf2_geometry_msgs sensor_msgs tf

@@ -1,0 +1,8 @@
+prefix=/home/agilex/nimo_ws/install
+
+Name: hehe
+Description: Description of hehe
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

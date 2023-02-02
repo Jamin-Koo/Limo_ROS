@@ -1,0 +1,8 @@
+prefix=/home/agilex/nimo_ws/install
+
+Name: m_car_2dnav
+Description: Description of m_car_2dnav
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

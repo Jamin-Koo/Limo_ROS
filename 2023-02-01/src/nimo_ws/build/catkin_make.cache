@@ -1,0 +1,2 @@
+limo_ros/learning_limo:limo_ros/limo_base:limo_ros/limo_bringup:m_car/m_car_2dnav:m_car/m_car_2dslam:m_car/m_car_bringup:m_car/m_car_encoder:opencv_lane_detect:usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/agilex/nimo_ws/devel -DCMAKE_INSTALL_PREFIX=/home/agilex/nimo_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/agilex/nimo_ws/devel
+
+Name: m_car_2dslam
+Description: Description of m_car_2dslam
+Version: 0.1.0
+Cflags: -I/home/agilex/nimo_ws/src/m_car/m_car_2dslam/include
+Libs: -L${prefix}/lib 
+Requires: roscpp sensor_msgs
