@@ -1,0 +1,16 @@
+<!-- -->
+
+<!-- gmapping建图节点-->
+
+<launch>
+
+ <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" 
+    name="laser_scan_matcher_node" output="screen">
+    <param name="fixed_frame" value = "odom"/>
+    <param name="use_alpha_beta" value="true"/>
+    <param name="max_iterations" value="10"/>
+  </node>
+
+ 
+  <include file="$(find coms1_2dslam)/slam_config/coms1/slam_gmapping.xml"/>
+</launch>
