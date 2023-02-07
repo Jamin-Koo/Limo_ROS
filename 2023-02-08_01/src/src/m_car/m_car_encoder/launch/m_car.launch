@@ -1,0 +1,54 @@
+<launch>
+
+  <!--<node pkg="tf" type="static_transform_publisher" name="odom_broadcaster" args="1 1 0 0 0 0 map odom 10" />-->
+  
+  
+
+  
+  <!--
+  <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="0 0 0 0 0 0 base_link imu 10" />
+  <node pkg="tf" type="static_transform_publisher" name="camera_broadcaster" args="0.095 0 0.13 0 0 0 base_link camera 10" />
+  <node pkg="tf" type="static_transform_publisher" name="left_sonar_broadcaster" args="0.15 0.05 -0.005 0 0 0 base_link left_sonar 10" />
+  <node pkg="tf" type="static_transform_publisher" name="right_sonar_broadcaster" args="0.15 -0.05 -0.005 0 0 0 base_link right_sonar 10" />
+  -->
+  
+  <!-- imu handsfree a9 -->
+  <arg name="imu_type" default="a9" doc="model type [a9, b9, b6 ,d6]"/>
+  <node pkg="handsfree_ros_imu" type="hfi_$(arg imu_type)_ros.py" name="imu">
+  </node>
+    
+ 
+ 
+  <node pkg="m_car_encoder" type="ros_m_car_control_node" name="ros_m_car_control_node" output="screen" /> 
+  
+  
+<!--
+  <arg name="model" />
+  <arg name="gui" default="False" />  
+  <param name="robot_description" textfile="$(find m_car_encoder)/urdf/my_car2.urdf" />
+  <param name="use_gui" value="$(arg gui)"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />  
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find m_car_encoder)/rviz/m_car_new_odom.rviz" /> 
+  --> 
+  
+  
+  <node pkg="tf" type="static_transform_publisher" name="laser_broadcaster" args="0.095 0.0 0.01 0.0 0.0 3.14 base_link laser 10" />  
+ 
+  <node pkg="sc_mini" type="sc_mini" name="sc_mini">
+    <param name="frame_id" type="string" value="laser"/>
+    <param name="port" type="string" value="/dev/sc_mini"/>
+    <param name="baud_rate" type="int" value="115200"/> 
+    <remap from="base_scan" to="scan"/>
+  </node>
+
+  
+  <!-- 对雷达原始数据进行范围、噪声等相关滤波-->
+  <!--node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
+  <rosparam command="load" file="$(find m_car_bringup)/robot_para/laser_filter_yaml/rplidar/laser_filter_m_car.yaml" />
+  <remap from="scan" to="base_scan"/>
+  <remap from="scan_filtered" to="scan"/>
+  </node-->
+    <!--node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0.07 0 0 0 base_footprint base_link 10" /-->
+ 
+</launch>
