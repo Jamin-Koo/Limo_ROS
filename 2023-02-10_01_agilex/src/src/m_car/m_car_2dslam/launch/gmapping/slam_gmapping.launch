@@ -1,9 +1,0 @@
-<!-- -->
-
-<!-- gmapping建图节点-->
-
-<launch>
-
-
-  <include file="$(find pan_gyo_2dslam)/slam_config/pan_gyo/slam_gmapping.xml"/> 
-</launch>

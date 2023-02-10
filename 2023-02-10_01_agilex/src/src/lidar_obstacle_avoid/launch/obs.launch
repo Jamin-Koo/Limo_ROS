@@ -1,8 +1,0 @@
-<launch>
-
-
-  <node pkg="lidar_obstacle_avoid" type="lidar_obstacle_avoid_node" name="lidar_obstacle_avoid" output="screen" /> 
-
-  </node>
-
-</launch>

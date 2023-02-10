@@ -1,6 +1,0 @@
-<launch>
-
-  <node pkg="region" type="region_node" name="region_node" output="screen">
-  </node>
-
-</launch>

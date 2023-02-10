@@ -1,7 +1,0 @@
-<launch>
-   <node name="crosswalk_detect" pkg="mux_trio" type="crosswalk_detect.py" output="screen">
-      <rosparam file="$(find mux_trio)/param/crosswalk.yaml" command="load" />
-      <param name="image_topic_name" value="/camera/rgb/image_raw/compressed"/>
-      <param name="visualization" value="False"/>
-   </node>
-</launch> 
