@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="mux_trio" type="cmd_vel_mode_mux_node" name="cmd_vel_mux_node" output="screen">
+  </node>
+
+</launch>
